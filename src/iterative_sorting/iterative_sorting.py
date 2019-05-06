@@ -43,24 +43,25 @@ def selection_sort( arr ):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
-    # First, we need to loop through the array
-    while not swapped:
-
-        for i in range(1, len(arr)):
+    while True:
+        # First, we need to loop through the array
+        swaps = 0
+        for i in range(0, (len(arr) - 1)):
         # Then, we need to compare each element to the one next to it
         # If arr[i-1] > arr[i], perform our swap
-            cur_index = i
-            print(cur_index)
-            if arr[i] < arr[i-1]:
+            if arr[i] > arr[i+1] and i != len(arr):
                 temp = arr[i]
-                arr[i] = arr[i-1]
-                arr[i-1] = temp
-                swapped = True
-                break
+                arr[i] = arr[i+1]
+                arr[i+1] = temp
+                swaps += swaps + 1
+        if swaps > 0:
+            continue
+        else:
+            break
     
     return arr
 
-bubble_sort([1, 5, 8, 4, 2, 9, 6, 0, 3, 7])
+print(bubble_sort([1, 5, 8, 4, 2, 9, 6, 0, 3, 7]))
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
 
