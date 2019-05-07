@@ -46,7 +46,7 @@ def bubble_sort( arr ):
     while True:
         # First, we need to loop through the array
         swaps = 0
-        for i in range(0, (len(arr) - 1)):
+        for i in range(0, len(arr) - 1):
         # Then, we need to compare each element to the one next to it
         # If arr[i-1] > arr[i], perform our swap
             if arr[i] > arr[i+1] and i != len(arr):
@@ -60,6 +60,16 @@ def bubble_sort( arr ):
             break
     
     return arr
+
+# Different style bubble sort function attempt
+# def bubble_sort( arr ):
+#     for i in range(len(arr)):
+#         for j in range(0, (len(arr)-i-1)):
+#             if arr[j] > arr[j+1]:
+#                 arr[j], arr[j+1] = arr[j+1], arr[j]
+                 
+
+#     return arr
 
 print(bubble_sort([1, 5, 8, 4, 2, 9, 6, 0, 3, 7]))
 # STRETCH: implement the Count Sort function below
